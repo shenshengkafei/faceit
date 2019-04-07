@@ -16,6 +16,25 @@ What does this script do? It makes it trivially easy to acquire and preprocess t
 
 There is a requirements.txt file in the repo, but to make it all work, you'll need CUDA libraries installed, and ideally Dlib compiled with CUDA support.
 
+[Install CUDA Toolkit](https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&target_distro=Ubuntu&target_version=1804&target_type=debnetwork)
+
+```
+git submodule init
+git submodule update
+apt-get install python3-pip -y
+apt-get install ffmpeg -y
+apt-get install build-essential cmake pkg-config -y
+apt-get install libx11-dev libatlas-base-dev -y
+apt-get install libgtk-3-dev libboost-python-dev -y
+
+pip3 install opencv-python
+pip3 install -r requirements.txt
+
+cd facesawp
+pip3 install -r requirements.txt
+pip3 install -r requirements-gpu.txt
+```
+
 ## Usage
 
 Setup your model and training data in code, e.g.:
@@ -42,20 +61,20 @@ Then create the directory `./data/persons` and put one image containing the face
 
 Then, preprocess the data. This downloads the videos, breaks them into frames, and extracts the relevant faces, e.g.:
 ```
-python faceit.py preprocess fallon_to_oliver
+python3 faceit.py preprocess fallon_to_oliver
 ```
 
 Then train the model, e.g.:
 ```
-python faceit.py train fallon_to_oliver
+python3 faceit.py train fallon_to_oliver
 ```
 
 Finally, convert any video that is stored on disk, e.g.:
 ```
-python faceit.py convert fallon_to_oliver fallon_emmastone.mp4 --start 40 --duration 55 --side-by-side
+python3 faceit.py convert fallon_to_oliver fallon_emmastone.mp4 --start 40 --duration 55 --side-by-side
 ```
 
-Note that you can get useful usage information just by running: `python faceit.py -h`
+Note that you can get useful usage information just by running: `python3 faceit.py -h`
 
 
 ## License
