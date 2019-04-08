@@ -18,6 +18,7 @@ There is a requirements.txt file in the repo, but to make it all work, you'll ne
 
 [Install CUDA Toolkit](https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&target_distro=Ubuntu&target_version=1804&target_type=debnetwork)
 
+[Install cuDNN](https://developer.nvidia.com/rdp/cudnn-download)
 ```
 git submodule init
 git submodule update
