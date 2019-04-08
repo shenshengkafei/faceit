@@ -31,7 +31,7 @@ apt-get install libgtk-3-dev libboost-python-dev -y
 pip3 install opencv-python
 pip3 install -r requirements.txt
 
-cd facesawp
+cd faceswap
 pip3 install -r requirements.txt
 pip3 install -r requirements-gpu.txt
 ```
