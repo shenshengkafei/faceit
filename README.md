@@ -23,7 +23,7 @@ There is a requirements.txt file in the repo, but to make it all work, you'll ne
 git submodule init
 git submodule update
 apt-get install python3-pip -y
-apt-get install ffmpeg -y
+apt-get install ffmpeg imagemagick -y
 apt-get install build-essential cmake pkg-config -y
 apt-get install libx11-dev libatlas-base-dev -y
 apt-get install libgtk-3-dev libboost-python-dev -y
